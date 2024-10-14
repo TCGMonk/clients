@@ -10,65 +10,35 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/TCGMonk/clients/refs/heads/main/thumbnail.jpg">
     <meta property="og:url" content="https://tcgmonk.github.io/clients/">
     <meta name="twitter:card" content="summary_large_image">
-
+    
     <style>
-        /* Background with stars and a purple-to-black gradient */
         body {
-            margin: 0;
             background: linear-gradient(to bottom, purple, black);
-            height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
             color: white;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
         }
-
-        #stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: transparent;
-            overflow: hidden;
+        h1 {
+            color: white;
         }
-
-        .star {
-            position: absolute;
-            background: white;
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: twinkle 3s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        /* Styling for sections */
         .menu {
-            background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent */
+            background-color: #333;
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
-            text-align: left; /* Align text to the left */
         }
-
         .menu h2 {
             color: white;
-            margin-bottom: 10px; /* Add spacing below the title */
         }
-
         .menu p {
             color: white;
             font-size: 18px;
-            margin-bottom: 15px; /* Add spacing below paragraphs */
         }
-
-        /* Styling for the download button */
+        .status {
+            font-size: 20px;
+            color: green;
+        }
         .download-btn {
             padding: 10px 20px;
             background-color: green;
@@ -77,19 +47,13 @@
             border-radius: 5px;
             font-size: 16px;
             transition: background-color 0.3s;
-            display: inline-block;
-            margin-top: 10px;
         }
-
         .download-btn:hover {
-            background-color: limegreen;
+            background-color: green;
         }
     </style>
 </head>
 <body>
-    <!-- Starry background animation -->
-    <div id="stars"></div>
-
     <h1>TCG Clients</h1>
     <p>Welcome to the official page of "TCG Clients". This page contains DLL's which you can download and use. Only use when necessary.</p>
     
@@ -114,14 +78,16 @@
         <a href="https://github.com/TCGMonk/clients/raw/refs/heads/main/Lunar%20Client%20By%20MonkV1.dll" download class="download-btn">Download</a>
     </div>
 
+
     <h1>Modded Apks</h1>
-    <p>This part of the website are modded apks. Modded apks are Apks that are modded, self-explanatory.</p>
+    <p>This part of the website are modded apks. Modded apks are Apks that are modded, self explanatory.</p>
 
     <div class="menu">
         <h2>Soon</h2>
         <p>Made by: ______</p>
         <a href="" download class="download-btn">Download</a>
     </div>
+    
     
     <h1>Multi Tools(PC)</h1>
     <p>This part of the website are Multi Tools. Multi Tools are tools that you can do pretty cool and a lot of things with.</p>
@@ -131,28 +97,8 @@
         <h2>TCG Contool</h2>
         <p>IP logger</p>
         <p>Made by: TCGMonk</p>
-        <p>Version 1</p>
+        <p>Verison 1</p>
         <a href="" download class="download-btn">Download</a>
     </div>
-
-    <script>
-        // JavaScript to generate stars
-        function createStar() {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.left = `${Math.random() * 100}vw`;
-            document.getElementById('stars').appendChild(star);
-
-            // Remove stars after some time to keep performance steady
-            setTimeout(() => {
-                star.remove();
-            }, 5000);
-        }
-
-        // Generate stars repeatedly
-        setInterval(createStar, 100);
-    </script>
-
 </body>
 </html>
