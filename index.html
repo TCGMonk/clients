@@ -20,13 +20,13 @@
         }
 
         body, html {
-            height: 100%;
+            height: auto; /* Changed to allow height to adjust based on content */
             background: black;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            overflow: auto; /* Allow scrolling if content overflows */
+            overflow-y: auto; /* Ensure vertical scrolling if content overflows */
         }
 
         h1 {
@@ -39,6 +39,9 @@
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
+            display: inline-block; /* Ensures sections are displayed side by side if space allows */
+            width: calc(100% - 40px); /* Adjusts width considering margin */
+            max-width: 600px; /* Sets a maximum width for better readability */
         }
 
         .menu h2 {
@@ -114,7 +117,6 @@
 <body>
     <!-- Star container -->
     <div class="star-container">
-        <!-- Create stars -->
         <script>
             for (let i = 0; i < 100; i++) {
                 const star = document.createElement('div');
