@@ -13,7 +13,7 @@
     
     <style>
         body {
-            
+            background: linear-gradient(to bottom, purple, black);
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -100,93 +100,5 @@
         <p>Verison 1</p>
         <a href="" download class="download-btn">Download</a>
     </div>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Starry Background</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            background: black;
-            overflow: hidden;
-        }
-
-        /* Star Styles */
-        .star {
-            width: 2px;
-            height: 2px;
-            background: limegreen; /* Change color to match your image */
-            position: absolute;
-            animation: twinkling 3s infinite ease-in-out;
-            border-radius: 50%;
-            opacity: 0.8;
-        }
-
-        /* Animation for the stars (twinkling effect) */
-        @keyframes twinkling {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-        }
-
-        /* Stars Animation (moving effect) */
-        @keyframes moveStars {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-100%);
-            }
-        }
-
-        /* Container to Hold the Stars */
-        .star-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            animation: moveStars 30s linear infinite;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Star Container to hold all the stars -->
-    <div class="star-container">
-        <!-- Create 100 small stars with varying positions and animations -->
-        <script>
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.top = Math.random() * 200 + 'vh';
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.animationDuration = Math.random() * 2 + 1 + 's';
-                document.querySelector('.star-container').appendChild(star);
-            }
-        </script>
-    </div>
-
 </body>
 </html>
