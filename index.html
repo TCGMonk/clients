@@ -10,50 +10,70 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/TCGMonk/clients/refs/heads/main/thumbnail.jpg">
     <meta property="og:url" content="https://tcgmonk.github.io/clients/">
     <meta name="twitter:card" content="summary_large_image">
-    
+
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Live star background */
+        #stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: black;
+        }
+        #stars:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(white, transparent), radial-gradient(white, transparent);
+            background-size: 2px 2px, 1px 1px;
+            animation: animate 50s linear infinite;
+        }
+        @keyframes animate {
+            from {
+                background-position: 0 0, 0 0;
+            }
+            to {
+                background-position: 10000px 10000px, 20000px 20000px;
+            }
         }
 
-        body, html {
-            height: 100%;
+        /* General page styling */
+        body {
             background: black;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            overflow: hidden; /* Ensure the star animation fits within screen */
         }
 
         h1 {
             color: white;
         }
 
+        /* Styling for each client or section */
         .menu {
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent to show stars */
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
+            text-align: left; /* Align text to the left */
         }
 
         .menu h2 {
             color: white;
+            margin-bottom: 10px; /* Add spacing below the title */
         }
 
         .menu p {
             color: white;
             font-size: 18px;
+            margin-bottom: 15px; /* Add spacing below paragraphs */
         }
 
-        .status {
-            font-size: 20px;
-            color: green;
-        }
-
+        /* Styling for the download button */
         .download-btn {
             padding: 10px 20px;
             background-color: green;
@@ -62,72 +82,18 @@
             border-radius: 5px;
             font-size: 16px;
             transition: background-color 0.3s;
+            display: inline-block; /* Ensure button is not inline with text */
+            margin-top: 10px; /* Add space above the button */
         }
 
         .download-btn:hover {
             background-color: limegreen;
         }
-
-        /* Starry background styles */
-        .star {
-            width: 2px;
-            height: 2px;
-            background: purple;
-            position: absolute;
-            animation: twinkling 3s infinite ease-in-out;
-            border-radius: 50%;
-            opacity: 0.8;
-        }
-
-        @keyframes twinkling {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes moveStars {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-100%);
-            }
-        }
-
-        .star-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            animation: moveStars 30s linear infinite;
-        }
     </style>
 </head>
 <body>
-    <!-- Star container -->
-    <div class="star-container">
-        <!-- Create stars -->
-        <script>
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.top = Math.random() * 200 + 'vh';
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.animationDuration = Math.random() * 2 + 1 + 's';
-                document.querySelector('.star-container').appendChild(star);
-            }
-        </script>
-    </div>
+
+    <div id="stars"></div> <!-- Live star background container -->
 
     <h1>TCG Clients</h1>
     <p>Welcome to the official page of "TCG Clients". This page contains DLL's which you can download and use. Only use when necessary.</p>
@@ -153,16 +119,14 @@
         <a href="https://github.com/TCGMonk/clients/raw/refs/heads/main/Lunar%20Client%20By%20MonkV1.dll" download class="download-btn">Download</a>
     </div>
 
-
     <h1>Modded Apks</h1>
-    <p>This part of the website are modded apks. Modded apks are Apks that are modded, self explanatory.</p>
+    <p>This part of the website are modded apks. Modded apks are Apks that are modded, self-explanatory.</p>
 
     <div class="menu">
         <h2>Soon</h2>
         <p>Made by: ______</p>
         <a href="" download class="download-btn">Download</a>
     </div>
-    
     
     <h1>Multi Tools(PC)</h1>
     <p>This part of the website are Multi Tools. Multi Tools are tools that you can do pretty cool and a lot of things with.</p>
@@ -172,8 +136,9 @@
         <h2>TCG Contool</h2>
         <p>IP logger</p>
         <p>Made by: TCGMonk</p>
-        <p>Verison 1</p>
+        <p>Version 1</p>
         <a href="" download class="download-btn">Download</a>
     </div>
+
 </body>
 </html>
